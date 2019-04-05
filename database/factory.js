@@ -23,6 +23,7 @@ const Factory = use('Factory')
 Factory.blueprint('App/Models/Movie', async (faker) => {
     return {
         movie_name: faker.sentence({ words: 2 }),
+        movie_slug: faker.sentence({ words: 1 }),
         movie_poster: faker.avatar(),
         movie_rating: faker.floating({ min: 1, max: 5, fixed: 1 }),
         movie_date_released: faker.date(),

@@ -1,12 +1,13 @@
 'use strict'
 
 /** @type {import('@adonisjs/lucid/src/Schema')} */
-const Schema = use('Schema')
+const Schema = use('Schema');
 
 class MovieSchema extends Schema {
   up () {
     this.create('movies', (table) => {
       table.string('movie_name').notNullable();
+      table.string('movie_slug');
       table.string('movie_poster');
       table.string('movie_rating');
       table.string('movie_date_released');
@@ -14,12 +15,12 @@ class MovieSchema extends Schema {
       table.string('movie_genre');
       table.increments();
       table.timestamps();
-    })
+    });
   }
 
   down () {
-    this.drop('movies')
+    this.drop('movies');
   }
 }
 
-module.exports = MovieSchema
+module.exports = MovieSchema;
