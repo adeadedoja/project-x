@@ -10,7 +10,7 @@ test('can get one movie with slug', async ({ assert, client }) => {
 
     const movies = await Factory.model('App/Models/Movie').createMany(numberOfMoviesToCreate);
 
-    const randomNumber = Math.floor(Math.random() * (numberOfMoviesToCreate - 1)) + 1;
+    const randomNumber = Math.floor(Math.random() * (numberOfMoviesToCreate - 1));
     const randomMovie = movies[randomNumber];
 
     const response = await client.get(`/api/movie/${randomMovie.movie_slug}`).end();
